@@ -20,5 +20,8 @@ class war_server:
     self.parse_args(args)
   
 if __name__ == 'main':
-  w = war_server()
-  w.main()
+  try:
+    w = war_server(sys.argv[1:])
+    w.main()
+  except KeyboardInterrupt:
+    sys.exit(0)
